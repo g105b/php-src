@@ -5414,7 +5414,7 @@ void zend_compile_declare(zend_ast *ast) /* {{{ */
 			}
 
 			if (Z_LVAL(value_zv) == 1) {
-				CG(active_op_array)->fn_flags |= ZEND_ACC_STRICT_TYPES;
+				CG(active_op_array)->fn_flags &= ~ZEND_ACC_STRICT_TYPES;
 			}
 
 		} else {

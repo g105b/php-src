@@ -78,7 +78,7 @@ void init_op_array(zend_op_array *op_array, zend_uchar type, int initial_ops_siz
 	op_array->static_variables = NULL;
 	op_array->last_try_catch = 0;
 
-	op_array->fn_flags = 0;
+	op_array->fn_flags = ZEND_ACC_STRICT_TYPES;
 
 	op_array->last_literal = 0;
 	op_array->literals = NULL;
