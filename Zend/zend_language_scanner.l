@@ -1946,11 +1946,7 @@ string:
 
 <INITIAL>"<?" {
 	if (CG(short_tags)) {
-		BEGIN(ST_IN_SCRIPTING);
-		if (PARSER_MODE()) {
-			SKIP_TOKEN(T_OPEN_TAG);
-		}
-		RETURN_TOKEN(T_OPEN_TAG);
+		zend_error(E_COMPILE_ERROR, "Short tags detected on line %d", CG(zend_lineno));
 	} else {
 		goto inline_char_handler;
 	}
